@@ -1,0 +1,65 @@
+
+/* an example of a variable for color so it's easier to change colors */
+@primary-color: gray;
+@secondary-color: cyan;
+
+/* using the color vars */
+body{
+    font-family: 'Saira Semi Condensed', sans-serif;
+    background-color: @primary-color;
+    color: @secondary-color;
+}
+
+
+
+/* and example of using vars to stick to "do not repeat yourself" */
+.rounded-corners(@size){
+    moz-border-radius: @size;
+    -webkit-border-radius: @size;
+    border-radius: @size;
+}
+
+/* using the previously created "function" */
+#element-one {
+    border: 1px solid black;
+    .rounded-corners(20px);
+}
+
+#element-two{
+    border: 1px solid black;
+    .rounded-corners(5px);
+}
+
+/* media queries */
+/* screen less than 500px */
+@media(max-width: 500px){
+    p{
+        font-size: 50px;
+    }
+}
+
+/* styling cascading example */
+form
+{
+
+    input
+    {
+        background-color: yellow;
+    }
+
+    button
+    {
+        background-color: green;
+    }
+}
+
+
+@font-base-size: 14px;
+html{
+    font-size: @font-base-size;
+}
+
+
+h1{
+    font-size: @font-base-size + 10;
+}
